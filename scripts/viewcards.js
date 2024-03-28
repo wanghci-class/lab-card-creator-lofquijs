@@ -1,21 +1,21 @@
-const cards = JSON.parse(localStorage.getItem('cards'));
+let cards = JSON.parse(localStorage.getItem('cards'));
 
 for (let i = 0; i < cards.length; i++) {
-    const card = cards[i];
+    let card = cards[i];
     console.log(card);
 }
 
 
-const template = document.getElementById('card-template');
+let template = document.getElementById('card-template');
 
 for (let i = 0; i < cards.length; i++) {
-    const card = cards[i];
-    const cardView = template.content.cloneNode(true);
-    const titleText = cardView.querySelector(".title-text");
-    const fromText = cardView.querySelector(".from-text");
-    const toText = cardView.querySelector(".to-text");
-    const subtitleText = cardView.querySelector(".subtitle-text");
-    const messageText = cardView.querySelector(".message-text");
+    let card = cards[i];
+    let cardView = template.content.cloneNode(true);
+    let titleText = cardView.querySelector(".title-text");
+    let fromText = cardView.querySelector(".from-text");
+    let toText = cardView.querySelector(".to-text");
+    let subtitleText = cardView.querySelector(".subtitle-text");
+    let messageText = cardView.querySelector(".message-text");
 
     titleText.textContent = card.title;
     fromText.textContent = card.from;
@@ -23,7 +23,7 @@ for (let i = 0; i < cards.length; i++) {
     subtitleText.textContent = card.subtitle;
     messageText.textContent = card.message;
 
-    const deleteButton = cardView.querySelector(".delete-btn");
+    let deleteButton = cardView.querySelector(".delete-btn");
     if (deleteButton) {
         deleteButton.addEventListener("click", () => {
             console.log(i);
