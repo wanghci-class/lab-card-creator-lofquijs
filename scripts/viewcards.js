@@ -1,15 +1,11 @@
 let cards = JSON.parse(localStorage.getItem('cards'));
+let template = document.getElementById('card-template');
+
 
 for (let i = 0; i < cards.length; i++) {
     let card = cards[i];
     console.log(card);
-}
 
-
-let template = document.getElementById('card-template');
-
-for (let i = 0; i < cards.length; i++) {
-    let card = cards[i];
     let cardView = template.content.cloneNode(true);
     let titleText = cardView.querySelector(".title-text");
     let fromText = cardView.querySelector(".from-text");
@@ -51,4 +47,5 @@ for (let i = 0; i < cards.length; i++) {
 
     document.querySelector('main#card-list').appendChild(cardView);
 }
+
 
