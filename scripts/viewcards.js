@@ -33,6 +33,22 @@ for (let i = 0; i < cards.length; i++) {
         });
     }
 
+    titleText.addEventListener("input", updateCard);
+    fromText.addEventListener("input", updateCard);
+    toText.addEventListener("input", updateCard);
+    subtitleText.addEventListener("input", updateCard);
+    messageText.addEventListener("input", updateCard);
+
+    function updateCard() {
+        card.title = titleText.textContent;
+        card.from = fromText.textContent;
+        card.to = toText.textContent;
+        card.subtitle = subtitleText.textContent;
+        card.message = messageText.textContent;
+
+        localStorage.setItem('cards', JSON.stringify(cards));
+    }
+
     document.querySelector('main#card-list').appendChild(cardView);
 }
 
